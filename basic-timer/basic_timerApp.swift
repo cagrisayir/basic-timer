@@ -11,7 +11,7 @@ import SwiftUI
 struct basic_timerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(model: CounterModel())
         }
     }
 }

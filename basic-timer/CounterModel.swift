@@ -7,16 +7,16 @@
 
 import Foundation
 
-class CounterModel {
-    var secondElapsed = 0
-    private var timerTask: Task<Void, Error>?
+class CounterModel: ObservableObject {
+    @Published var secondElapsed = 0
+    @Published private var timerTask: Task<Void, Error>?
     var isTimerOn: Bool {
         timerTask != nil
     }
 
     func startTimerButtonTapped() {
         timerTask?.cancel()
-        timerTask = Task {
+        timerTask = Task { @MainActor in
             while true {
                 try await Task.sleep(for: .seconds(1))
                 self.secondElapsed += 1

@@ -8,28 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var secondsElapsed = 0
-    // to stop the timer
-    @State private var timerTask: Task<Void, Error>?
+    @ObservedObject var model: CounterModel
 
     var body: some View {
         Form {
             Section {
-                if timerTask == nil {
+                if !model.isTimerOn {
                     Button("Start timer") {
-                        secondsElapsed = 0
-                        timerTask?.cancel()
-                        timerTask = Task {
-                            while true {
-                                try await Task.sleep(for: .seconds(1))
-                                secondsElapsed += 1
-                            }
-                        }
+                        model.startTimerButtonTapped()
                     }
                 } else {
                     Button {
-                        timerTask?.cancel()
-                        timerTask = nil
+                        model.stopTimerButtonTapped()
                     } label: {
                         HStack {
                             Text("Stop timer")
@@ -38,7 +28,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                Text("Time: \(secondsElapsed)")
+                Text("Time: \(model.secondElapsed)")
             } header: {
                 Text("Timer")
             }
@@ -47,5 +37,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(model: CounterModel())
 }
