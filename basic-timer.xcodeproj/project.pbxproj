@@ -13,6 +13,8 @@
 		065739D52B4D207C00E09AD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 065739D42B4D207C00E09AD8 /* Preview Assets.xcassets */; };
 		065739DC2B4D26D400E09AD8 /* CounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065739DB2B4D26D400E09AD8 /* CounterModel.swift */; };
 		065739E02B4D32B100E09AD8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 065739DF2B4D32B100E09AD8 /* Launch Screen.storyboard */; };
+		06573A0D2B506AF400E09AD8 /* CountdownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06573A0C2B506AF400E09AD8 /* CountdownModel.swift */; };
+		06573A102B506B6100E09AD8 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06573A0F2B506B6100E09AD8 /* CountdownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		065739D42B4D207C00E09AD8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		065739DB2B4D26D400E09AD8 /* CounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterModel.swift; sourceTree = "<group>"; };
 		065739DF2B4D32B100E09AD8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		06573A0C2B506AF400E09AD8 /* CountdownModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownModel.swift; sourceTree = "<group>"; };
+		06573A0F2B506B6100E09AD8 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +59,12 @@
 		065739CC2B4D207B00E09AD8 /* basic-timer */ = {
 			isa = PBXGroup;
 			children = (
+				06573A0E2B506B4A00E09AD8 /* Views */,
+				06573A0B2B506AE000E09AD8 /* Models */,
 				065739CD2B4D207B00E09AD8 /* basic_timerApp.swift */,
 				065739CF2B4D207B00E09AD8 /* ContentView.swift */,
 				065739D12B4D207C00E09AD8 /* Assets.xcassets */,
 				065739D32B4D207C00E09AD8 /* Preview Content */,
-				065739DB2B4D26D400E09AD8 /* CounterModel.swift */,
 				065739DF2B4D32B100E09AD8 /* Launch Screen.storyboard */,
 			);
 			path = "basic-timer";
@@ -71,6 +76,23 @@
 				065739D42B4D207C00E09AD8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		06573A0B2B506AE000E09AD8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				065739DB2B4D26D400E09AD8 /* CounterModel.swift */,
+				06573A0C2B506AF400E09AD8 /* CountdownModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		06573A0E2B506B4A00E09AD8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				06573A0F2B506B6100E09AD8 /* CountdownView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +167,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				065739D02B4D207B00E09AD8 /* ContentView.swift in Sources */,
+				06573A102B506B6100E09AD8 /* CountdownView.swift in Sources */,
+				06573A0D2B506AF400E09AD8 /* CountdownModel.swift in Sources */,
 				065739CE2B4D207B00E09AD8 /* basic_timerApp.swift in Sources */,
 				065739DC2B4D26D400E09AD8 /* CounterModel.swift in Sources */,
 			);
