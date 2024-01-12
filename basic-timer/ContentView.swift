@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var model: CounterModel
+    let model: CounterModel
 
     var body: some View {
         Form {

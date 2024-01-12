@@ -7,9 +7,10 @@
 
 import Foundation
 
-class CounterModel: ObservableObject {
-    @Published var secondElapsed = 0
-    @Published private var timerTask: Task<Void, Error>?
+@Observable
+class CounterModel {
+    var secondElapsed = 0
+    private var timerTask: Task<Void, Error>?
     var isTimerOn: Bool {
         timerTask != nil
     }
