@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let model: CounterModel
+    @Bindable var model: CounterModel
 
     var body: some View {
         Form {
@@ -28,7 +28,10 @@ struct ContentView: View {
                         }
                     }
                 }
-                Text("Time: \(model.secondElapsed)")
+                if model.isSecondElapsedShow {
+                    Text("Time: \(model.secondElapsed)")
+                }
+                Toggle("Show Seconds", isOn: $model.isSecondElapsedShow)
             } header: {
                 Text("Timer")
             }

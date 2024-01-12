@@ -10,6 +10,7 @@ import Foundation
 @Observable
 class CounterModel {
     var secondElapsed = 0
+    var isSecondElapsedShow = true
     private var timerTask: Task<Void, Error>?
     var isTimerOn: Bool {
         timerTask != nil
