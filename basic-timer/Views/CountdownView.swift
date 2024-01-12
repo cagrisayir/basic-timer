@@ -13,18 +13,19 @@ struct CountdownView: View {
     @State var userTime: Int = 0
 
     var body: some View {
-        VStack {
-            Section {
+        ZStack {
+            Color.purple.ignoresSafeArea()
+            VStack {
                 Stepper("Set Timer", value: $userTime)
                 Text(userTime == 1 || userTime == 0 ? "Time: \(userTime) second." : "Time: \(userTime) seconds.")
-            }
 
-            Button("Start Timer") {
-                countdownTime.setTime(timer: userTime)
-                countdownTime.startTimer()
-            }
+                Button("Start Timer") {
+                    countdownTime.setTime(timer: userTime)
+                    countdownTime.startTimer()
+                }
 
-            Text("\(countdownTime.time)")
+                Text("\(countdownTime.time)")
+            }
         }
     }
 }

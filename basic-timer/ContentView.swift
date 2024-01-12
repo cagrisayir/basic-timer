@@ -8,37 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Bindable var model: CounterModel
-
     var body: some View {
-        Form {
-            Section {
-                if !model.isTimerOn {
-                    Button("Start timer") {
-                        model.startTimerButtonTapped()
-                    }
-                } else {
-                    Button {
-                        model.stopTimerButtonTapped()
-                    } label: {
-                        HStack {
-                            Text("Stop timer")
-                            Spacer()
-                            ProgressView().id(UUID())
-                        }
-                    }
+        TabView {
+            CounterView(model: CounterModel())
+                .tabItem {
+                    Label("Counter", systemImage: "arrow.counterclockwise.circle.fill")
                 }
-                if model.isSecondElapsedShow {
-                    Text("Time: \(model.secondElapsed)")
+
+            CountdownView()
+                .tabItem {
+                    Label("Countdown", systemImage: "arrow.down.circle.dotted")
                 }
-                Toggle("Show Seconds", isOn: $model.isSecondElapsedShow)
-            } header: {
-                Text("Timer")
-            }
         }
     }
 }
 
 #Preview {
-    ContentView(model: CounterModel())
+    ContentView()
 }
