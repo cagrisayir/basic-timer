@@ -14,17 +14,32 @@ struct CountdownView: View {
 
     var body: some View {
         ZStack {
-            Color.purple.ignoresSafeArea()
+            Color.purple
+                .opacity(0.3)
+                .ignoresSafeArea()
+
             VStack {
                 Stepper("Set Timer", value: $userTime)
                 Text(userTime == 1 || userTime == 0 ? "Time: \(userTime) second." : "Time: \(userTime) seconds.")
 
-                Button("Start Timer") {
+                Button(action: {
                     countdownTime.setTime(timer: userTime)
                     countdownTime.startTimer()
-                }
+                }, label: {
+                    ZStack {
+                        Circle()
+                            .frame(height: 100)
+                            .foregroundStyle(.green)
 
+                        Text("Start")
+                            .foregroundStyle(.white)
+                            .font(.title)
+                            .bold()
+                    }
+                })
                 Text("\(countdownTime.time)")
+                    .font(.title)
+                    .bold()
             }
         }
     }
