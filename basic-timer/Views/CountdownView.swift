@@ -28,7 +28,7 @@ struct CountdownView: View {
                 }, label: {
                     ZStack {
                         Circle()
-                            .frame(height: 100)
+                            .frame(height: 120)
                             .foregroundStyle(.green)
 
                         Text("Start")
