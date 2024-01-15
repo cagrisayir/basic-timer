@@ -16,9 +16,14 @@ struct CounterView: View {
                 .ignoresSafeArea()
             VStack {
                 if model.isSecondElapsedShow {
-                    Text("Time: \(model.secondElapsed)")
-                        .font(.title)
-                        .bold()
+                    VStack {
+                        Text("Time")
+                            .font(.title3)
+
+                        Text("\(model.secondElapsed)")
+                            .font(.title)
+                            .bold()
+                    }
                 }
                 HStack {
                     withAnimation {
